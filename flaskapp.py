@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 app = Flask(__name__)
 
 # Create an engine 
-engine = create_engine("sqlite:///hawaii.sqlite")
+engine = create_engine("sqlite:///hawaiicopy.sqlite")
 
 # reflect 
 Base = automap_base()
@@ -26,7 +26,16 @@ Station = Base.classes.station
 session = Session(engine)
 
 
-@app.route("/api/v1.0/precipitation")
+@app.route("/")
+def home():
+    print("Links available are:")
+    print("/api/v1.0/prec")
+    print("/api/v1.0/station")
+    print("/api/v1.0/tobs")
+    print("/api/v1.0/<start>")
+    print("/api/v1.0/<start>/<end>")
+
+@app.route("/api/v1.0/prec")
 def precipitation():
     results = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= '2016-08-23').order_by(Measurement.date)
     
@@ -40,7 +49,7 @@ def precipitation():
     return jsonify(precipitation_values)
 
 
-@app.route("/api/v1.0/stations")
+@app.route("/api/v1.0/station")
 def stations():
     results = session.query(Station.name).all()
 
