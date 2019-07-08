@@ -28,12 +28,16 @@ session = Session(engine)
 
 @app.route("/")
 def home():
-    print("Links available are:")
-    print("/api/v1.0/prec")
-    print("/api/v1.0/station")
-    print("/api/v1.0/tobs")
-    print("/api/v1.0/<start>")
-    print("/api/v1.0/<start>/<end>")
+    return (
+        f"Available links are: "
+        f" /api/v1.0/prec"
+        f" /api/v1.0/station "
+        f" /api/v1.0/tobs "
+        f" /api/v1.0/<start> "
+        f" /api/v1.0/<start>/<end> "
+    )
+    
+
 
 @app.route("/api/v1.0/prec")
 def precipitation():
