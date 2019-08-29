@@ -70,7 +70,10 @@ Using SQLAlchemy to model database schema, sqlite tables for "measurements" and 
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
 
 
-
+## Images From the Analysis
 
 
 ![station-histogram.png](Images/station-histogram.png)
+
+![daily-normals.png](daily-normals.png)
+
