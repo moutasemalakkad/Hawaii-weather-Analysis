@@ -75,5 +75,5 @@ Using SQLAlchemy to model database schema, sqlite tables for "measurements" and 
 
 ![station-histogram.png](Images/station-histogram.png)
 
-![daily-normals.png](daily-normals.png)
+![daily-normals.png](Images/daily-normals.png)
 
